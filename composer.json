@@ -1,0 +1,23 @@
+{
+    "name": "simplypost/module-shipping",
+    "description": "Simplypost Shipping",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "authors": [{
+        "email": "hien.tam@simplypost.asia",
+        "name": "Tam Dao"
+    }],
+    "require": {
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Simplypost\\Shipping\\": ""
+        }
+    }
+}
