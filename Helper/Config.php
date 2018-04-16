@@ -16,7 +16,7 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function getBungeeUrl()
     {
-        return $this->_getConfigByPath(self::XML_PATH_BUNGEE_URL);
+        return 'http://staging.simplypost.asia/';//$this->_getConfigByPath(self::XML_PATH_BUNGEE_URL);
     }
 
     public function getSimplypostApiToken()

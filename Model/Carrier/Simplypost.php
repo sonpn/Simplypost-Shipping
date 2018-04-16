@@ -59,7 +59,7 @@ class Simplypost extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $cart = $objectManager->get('\Magento\Checkout\Model\Cart');
         $price = $cart->getQuote()->getGrandTotal();
 
-        $weight = $request->getPackageWeight();
+        $weight = 1;//$request->getPackageWeight();
         $countryCode = $request->getDestCountryId();
 
         $bungee_url = $this->_config->getBungeeUrl();
