@@ -14,6 +14,9 @@
 				<field id="token" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
 					<label>Simplypost Api Token</label>
 				</field>
+				<field id="bungee_url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="text">
+					<label>Bungee url</label>
+				</field>
 				<field id="sallowspecific" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label" type="select">
 					<label>Ship to Applicable Countries</label>
 					<frontend_class>shipping-applicable-country</frontend_class>
