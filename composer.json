@@ -1,23 +1,25 @@
 {
-    "name": "simplypost/module-shipping",
-    "description": "Simplypost Shipping",
-    "version": "1.0.0",
-    "type": "magento2-module",
-    "license": [
-        "proprietary"
-    ],
-    "authors": [{
-        "email": "sonpn@dtn.com.vn",
-        "name": "Sonny Pham"
-    }],
-    "require": {
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Simplypost\\Shipping\\": ""
-        }
+  "name": "simplypost/module-shipping",
+  "description": "Simplypost Shipping",
+  "version": "1.0.0",
+  "type": "magento2-module",
+  "license": [
+    "proprietary"
+  ],
+  "authors": [
+    {
+      "email": "sonpn@dtn.com.vn",
+      "name": "Sonny Pham"
     }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Simplypost\\Shipping\\": ""
+    }
+  }
 }

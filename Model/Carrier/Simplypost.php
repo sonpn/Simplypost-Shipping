@@ -37,7 +37,8 @@ class Simplypost extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         \Magento\Framework\HTTP\Client\Curl $curl,
         \Simplypost\Shipping\Helper\Config $config,
         array $data = []
-    ) {
+    )
+    {
         $this->_logger = $logger;
         $this->_rateResultFactory = $rateResultFactory;
         $this->_rateMethodFactory = $rateMethodFactory;
@@ -63,20 +64,20 @@ class Simplypost extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
         $countryCode = $request->getDestCountryId();
 
         $bungee_url = $this->_config->getBungeeUrl();
-        $this->_logger->debug("Simplypost API url".$bungee_url);
+        $this->_logger->debug("Simplypost API url" . $bungee_url);
 
         $token = $this->_config->getSimplypostApiToken();
-        $this->_logger->debug("Simplypost token".$token);
+        $this->_logger->debug("Simplypost token" . $token);
 
-        if (!isset($token) || trim($token)==='') {
+        if (!isset($token) || trim($token) === '') {
             return false;
         }
 
-        $this->_logger->debug("Simplypost token ".$token);
+        $this->_logger->debug("Simplypost token " . $token);
 
-        $url = $bungee_url.'api/gateway/v1/services?weight='.strval($weight).'&price='.strval($price).'&countryCode='.$countryCode;
+        $url = $bungee_url . 'api/gateway/v1/services?weight=' . strval($weight) . '&price=' . strval($price) . '&countryCode=' . $countryCode;
 
-        $this->_logger->debug("Simplypost request url ".$url);
+        $this->_logger->debug("Simplypost request url " . $url);
 
         $this->_curl->addHeader('Content-Type', 'application/json');
         $this->_curl->addHeader('Simplypost-Api-Token', $token);
@@ -84,14 +85,14 @@ class Simplypost extends \Magento\Shipping\Model\Carrier\AbstractCarrier impleme
 
         $response = $this->_curl->getBody();
 
-        $this->_logger->debug("Simplypost service type data ".$response);
+        $this->_logger->debug("Simplypost service type data " . $response);
 
         $shippingMethods = json_decode($response);
 
         $result = $this->_rateResultFactory->create();
 
         foreach ($shippingMethods as $shippingMethod) {
-            $this->_logger->debug("Simplypost service type ".$shippingMethod->code);
+            $this->_logger->debug("Simplypost service type " . $shippingMethod->code);
             $method = $this->_rateMethodFactory->create();
             $method->setCarrier($this->_code);
             $method->setCarrierTitle($this->getConfigData('title'));
